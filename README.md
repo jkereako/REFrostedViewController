@@ -1,5 +1,14 @@
 # REFrostedViewController
 
+This is a simplified version of Romamn Efimov's REFrostedViewController.
+
+## Changes
+
+- Deleted the categories `UIImage+REFrostedViewController` and `UIView+REFrostedViewController`
+- Changed the coding style to match the [NYT Objective-C style guide](https://github.com/NYTimes/objective-c-style-guide)
+- Replaced logic in `tableView:didSelectRowAtIndexPath:` with a custom segue. This does require some configuration to work properly, but in my opnion, it is easier to understand.
+- Compiled in hard-mode
+
 iOS 7/8 style blurred view controller that appears on top of your view controller.
 
 <img src="https://github.com/romaonthego/REFrostedViewController/raw/master/Screenshot.png" alt="REFrostedViewController Screenshot" width="400" height="568" />
