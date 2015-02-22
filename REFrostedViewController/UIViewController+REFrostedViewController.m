@@ -46,9 +46,13 @@
     while (iter) {
         if ([iter isKindOfClass:[REFrostedViewController class]]) {
             return (REFrostedViewController *)iter;
-        } else if (iter.parentViewController && iter.parentViewController != iter) {
+        }
+
+        else if (iter.parentViewController && iter.parentViewController != iter) {
             iter = iter.parentViewController;
-        } else {
+        }
+
+        else {
             iter = nil;
         }
     }
