@@ -23,16 +23,16 @@
 // THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @class REFrostedViewController;
 
 @interface REFrostedContainerViewController : UIViewController
 
-@property (strong, readwrite, nonatomic) UIImage *screenshotImage;
-@property (weak, readwrite, nonatomic) REFrostedViewController *frostedViewController;
-@property (assign, readwrite, nonatomic) BOOL animateApperance;
-@property (strong, readonly, nonatomic) UIView *containerView;
+@property (nonatomic) UIImage *screenshotImage;
+@property (nonatomic, weak) REFrostedViewController *frostedViewController;
+@property (nonatomic, getter=isAnimateApperance) BOOL animateApperance;
+@property (nonatomic, readonly) UIView *containerView;
 
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer;
 - (void)hide;

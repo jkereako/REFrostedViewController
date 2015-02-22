@@ -23,7 +23,7 @@
 // THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import "UIViewController+REFrostedViewController.h"
 
 typedef NS_ENUM(NSInteger, REFrostedViewControllerDirection) {
@@ -42,9 +42,9 @@ typedef NS_ENUM(NSInteger, REFrostedViewControllerLiveBackgroundStyle) {
 
 @interface REFrostedViewController : UIViewController
 
-@property (strong, readonly, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
-@property (assign, readwrite, nonatomic) BOOL panGestureEnabled;
-@property (assign, readwrite, nonatomic) REFrostedViewControllerDirection direction;
+@property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic) BOOL panGestureEnabled;
+@property (nonatomic) REFrostedViewControllerDirection direction;
 
 /**
  * The backgroundFadeAmount is how much the backgound view fades when the menu
@@ -53,21 +53,18 @@ typedef NS_ENUM(NSInteger, REFrostedViewControllerLiveBackgroundStyle) {
  * 1.0 is completely black. 0.0 means the background does not dim at all.
  * The default value is 0.3.
  */
-@property (assign, readwrite, nonatomic) CGFloat backgroundFadeAmount;
-@property (strong, readwrite, nonatomic) UIColor *blurTintColor; // Used only when live blur is off
-@property (assign, readwrite, nonatomic) CGFloat blurRadius; // Used only when live blur is off
-@property (assign, readwrite, nonatomic) CGFloat blurSaturationDeltaFactor; // Used only when live blur is off
-@property (assign, readwrite, nonatomic) NSTimeInterval animationDuration;
-@property (assign, readwrite, nonatomic) BOOL limitMenuViewSize;
-@property (assign, readwrite, nonatomic) CGSize menuViewSize;
-@property (assign, readwrite, nonatomic) BOOL liveBlur; // iOS 7 only
-@property (assign, readwrite, nonatomic) REFrostedViewControllerLiveBackgroundStyle liveBlurBackgroundStyle; // iOS 7 only
+@property (nonatomic) CGFloat backgroundFadeAmount;
+@property (nonatomic) NSTimeInterval animationDuration;
+@property (nonatomic) BOOL limitMenuViewSize;
+@property (nonatomic) CGSize menuViewSize;
+@property (nonatomic) BOOL liveBlur; // iOS 7 only
+@property (nonatomic) REFrostedViewControllerLiveBackgroundStyle liveBlurBackgroundStyle; // iOS 7 only
 
-@property (weak, readwrite, nonatomic) id<REFrostedViewControllerDelegate> delegate;
-@property (strong, readwrite, nonatomic) UIViewController *contentViewController;
-@property (strong, readwrite, nonatomic) UIViewController *menuViewController;
+@property (nonatomic, weak) id<REFrostedViewControllerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet UIViewController *contentViewController;
+@property (nonatomic, weak) IBOutlet UIViewController *menuViewController;
 
-- (id)initWithContentViewController:(UIViewController *)contentViewController menuViewController:(UIViewController *)menuViewController;
+- (instancetype)initWithContentViewController:(UIViewController *)contentViewController menuViewController:(UIViewController *)menuViewController;
 - (void)presentMenuViewController;
 - (void)hideMenuViewController;
 - (void)resizeMenuViewControllerToSize:(CGSize)size;

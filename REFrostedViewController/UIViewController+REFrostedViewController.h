@@ -23,13 +23,13 @@
 // THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @class REFrostedViewController;
 
 @interface UIViewController (REFrostedViewController)
 
-@property (strong, readonly, nonatomic) REFrostedViewController *frostedViewController;
+@property (nonatomic, readonly) REFrostedViewController *frostedViewController;
 
 - (void)re_displayController:(UIViewController *)controller frame:(CGRect)frame;
 - (void)re_hideController:(UIViewController *)controller;
