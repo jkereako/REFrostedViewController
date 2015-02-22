@@ -16,6 +16,14 @@
 
 @implementation DEMOHomeViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    // Change the value to have the menu slide from another direction. The
+    // default direction is left
+    self.frostedViewController.direction = REFrostedViewControllerDirectionLeft;
+}
+
 - (IBAction)showMenuAction:(UIBarButtonItem * __unused)sender {
     // Dismiss keyboard
     [self.view endEditing:YES];
