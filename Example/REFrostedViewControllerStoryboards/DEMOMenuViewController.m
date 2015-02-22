@@ -53,7 +53,10 @@
         label.text = @"Jeff Kereakoglow";
         label.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
         label.backgroundColor = [UIColor clearColor];
-        label.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
+        label.textColor = [UIColor colorWithRed:62/255.0f
+                                          green:68/255.0f
+                                           blue:75/255.0f
+                                          alpha:1.0f];
         [label sizeToFit];
         label.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         
@@ -68,7 +71,10 @@
 
 - (void)tableView:(UITableView * __unused)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath * __unused)indexPath {
     cell.backgroundColor = [UIColor clearColor];
-    cell.textLabel.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
+    cell.textLabel.textColor = [UIColor colorWithRed:62/255.0f
+                                               green:68/255.0f
+                                                blue:75/255.0f
+                                               alpha:1.0f];
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
 }
 
@@ -78,7 +84,10 @@
     }
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 34)];
-    view.backgroundColor = [UIColor colorWithRed:167/255.0f green:167/255.0f blue:167/255.0f alpha:0.6f];
+    view.backgroundColor = [UIColor colorWithRed:167/255.0f
+                                           green:167/255.0f
+                                            blue:167/255.0f
+                                           alpha:0.6f];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 8, 0, 0)];
     label.text = @"Friends Online";
@@ -100,7 +109,6 @@
 }
 
 #pragma mark - UITableView Datasource
-
 - (CGFloat)tableView:(UITableView * __unused)tableView heightForRowAtIndexPath:(NSIndexPath * __unused)indexPath {
     return 54;
 }
@@ -122,6 +130,7 @@
     if ([title isEqualToString:@"Home"]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"home"];
     }
+
     else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"second"];
     }
@@ -131,12 +140,14 @@
     return cell;
 }
 #pragma mark - Navigation
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString * __unused)identifier sender:(__unused id)sender {
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString * __unused)identifier sender:(__unused UITableViewCell *)sender {
     return YES;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue * __unused)segue sender:(id __unused)sender {
-    // Boilerplate garbage
+- (void)prepareForSegue:(UIStoryboardSegue * __unused)segue sender:(UITableViewCell * __unused)sender {
+    // Boilerplate garbage.
+    // You must have these 2 lines of code in your implementation of
+    // prepareForSegue:sender:
     DEMONavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
 
     self.frostedViewController.contentViewController = navigationController;
