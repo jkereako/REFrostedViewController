@@ -54,10 +54,11 @@
                     <navigationItem key="navigationItem" title="Home Controller" id="HIf-bS-REK">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="SZg-Pf-I50">
                             <connections>
-                                <action selector="showMenu" destination="jsP-Dz-DYG" id="Fp7-R0-lXj"/>
+                                <action selector="showMenuAction:" destination="jsP-Dz-DYG" id="qJY-Rk-6mG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Awc-v8-Z61" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,7 +108,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="jsP-Dz-DYG" kind="custom" identifier="showSecond" customClass="REMenuItemSelectionSegue" id="ErX-ZA-0sd"/>
+                                    <segue destination="yGP-ij-jME" kind="custom" customClass="REMenuItemSelectionSegue" id="KsO-35-ozL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -133,10 +134,11 @@
                     <navigationItem key="navigationItem" title="Second Controller" id="8VR-6H-mGr">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="3gh-ed-0Ek">
                             <connections>
-                                <action selector="showMenu" destination="yGP-ij-jME" id="ZoY-gJ-XvS"/>
+                                <action selector="showMenuAction:" destination="yGP-ij-jME" id="mZB-XB-ptq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBM-yN-hYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,6 +154,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ErX-ZA-0sd"/>
+        <segue reference="IVB-T6-rZb"/>
     </inferredMetricsTieBreakers>
 </document>

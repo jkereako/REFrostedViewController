@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3032B8931805A10100064F85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3032B8921805A10100064F85 /* Foundation.framework */; };
-		3032B8951805A10100064F85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3032B8941805A10100064F85 /* CoreGraphics.framework */; };
-		3032B8971805A10100064F85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3032B8961805A10100064F85 /* UIKit.framework */; };
 		3032B89D1805A10100064F85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3032B89B1805A10100064F85 /* InfoPlist.strings */; };
 		3032B89F1805A10100064F85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B89E1805A10100064F85 /* main.m */; };
 		3032B8A31805A10100064F85 /* DEMOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8A21805A10100064F85 /* DEMOAppDelegate.m */; };
@@ -30,9 +27,6 @@
 
 /* Begin PBXFileReference section */
 		3032B88F1805A10100064F85 /* REFrostedViewControllerStoryboards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REFrostedViewControllerStoryboards.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3032B8921805A10100064F85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3032B8941805A10100064F85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3032B8961805A10100064F85 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3032B89A1805A10100064F85 /* REFrostedViewControllerStoryboards-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "REFrostedViewControllerStoryboards-Info.plist"; sourceTree = "<group>"; };
 		3032B89C1805A10100064F85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3032B89E1805A10100064F85 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,7 +37,6 @@
 		3032B8A71805A10100064F85 /* DEMORootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEMORootViewController.h; sourceTree = "<group>"; };
 		3032B8A81805A10100064F85 /* DEMORootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DEMORootViewController.m; sourceTree = "<group>"; };
 		3032B8AA1805A10100064F85 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3032B8B11805A10100064F85 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3032B8B91805A10100064F85 /* REFrostedViewControllerStoryboardsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "REFrostedViewControllerStoryboardsTests-Info.plist"; sourceTree = "<group>"; };
 		3032B8BB1805A10100064F85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3032B8BD1805A10100064F85 /* REFrostedViewControllerStoryboardsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewControllerStoryboardsTests.m; sourceTree = "<group>"; };
@@ -73,9 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3032B8951805A10100064F85 /* CoreGraphics.framework in Frameworks */,
-				3032B8971805A10100064F85 /* UIKit.framework in Frameworks */,
-				3032B8931805A10100064F85 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +78,6 @@
 				3032B8D51805A21600064F85 /* REFrostedViewController */,
 				3032B8981805A10100064F85 /* REFrostedViewControllerStoryboards */,
 				3032B8B71805A10100064F85 /* REFrostedViewControllerStoryboardsTests */,
-				3032B8911805A10100064F85 /* Frameworks */,
 				3032B8901805A10100064F85 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,17 +88,6 @@
 				3032B88F1805A10100064F85 /* REFrostedViewControllerStoryboards.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		3032B8911805A10100064F85 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3032B8921805A10100064F85 /* Foundation.framework */,
-				3032B8941805A10100064F85 /* CoreGraphics.framework */,
-				3032B8961805A10100064F85 /* UIKit.framework */,
-				3032B8B11805A10100064F85 /* XCTest.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3032B8981805A10100064F85 /* REFrostedViewControllerStoryboards */ = {
