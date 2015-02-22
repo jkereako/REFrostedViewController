@@ -28,23 +28,20 @@
 
 @implementation UIViewController (REFrostedViewController)
 
-- (void)re_displayController:(UIViewController *)controller frame:(CGRect)frame
-{
+- (void)re_displayController:(UIViewController *)controller frame:(CGRect)frame {
     [self addChildViewController:controller];
     controller.view.frame = frame;
     [self.view addSubview:controller.view];
     [controller didMoveToParentViewController:self];
 }
 
-- (void)re_hideController:(UIViewController *)controller
-{
+- (void)re_hideController:(UIViewController *)controller {
     [controller willMoveToParentViewController:nil];
     [controller.view removeFromSuperview];
     [controller removeFromParentViewController];
 }
 
-- (REFrostedViewController *)frostedViewController
-{
+- (REFrostedViewController *)frostedViewController {
     UIViewController *iter = self.parentViewController;
     while (iter) {
         if ([iter isKindOfClass:[REFrostedViewController class]]) {
