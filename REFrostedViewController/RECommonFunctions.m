@@ -23,11 +23,10 @@
 // THE SOFTWARE.
 //
 
+@import UIKit;
 #import "RECommonFunctions.h"
-#import <UIKit/UIKit.h>
 
-BOOL REFrostedViewControllerUIKitIsFlatMode(void)
-{
+BOOL REFrostedViewControllerUIKitIsFlatMode(void) {
     static BOOL isUIKitFlatMode = NO;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
