@@ -14,6 +14,8 @@
 
 @interface DEMOMenuViewController ()
 
+@property (nonatomic, weak, readwrite) IBOutlet UIImageView *avatar;
+@property (nonatomic, weak, readwrite) IBOutlet UILabel *avatarLabel;
 @property (nonatomic, readwrite) NSArray *dataSource;
 
 @end
@@ -29,90 +31,33 @@
                         // Section 2
                         @[@"John Appleseed", @"John Doe", @"Test User"]];
 
-    self.tableView.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.opaque = NO;
-    self.tableView.backgroundColor = [UIColor clearColor];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wgnu"
-    self.tableView.tableHeaderView = ({
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 184.0f)];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];
-        imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        imageView.image = [UIImage imageNamed:@"Avatar"];
-        imageView.layer.masksToBounds = YES;
-        imageView.layer.cornerRadius = 50.0;
-        imageView.layer.borderColor = [UIColor whiteColor].CGColor;
-        imageView.layer.borderWidth = 3.0f;
-        imageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
-        imageView.layer.shouldRasterize = YES;
-        imageView.clipsToBounds = YES;
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)];
-        label.text = @"Jeff Kereakoglow";
-        label.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
-        label.backgroundColor = [UIColor clearColor];
-        label.textColor = [UIColor colorWithRed:62/255.0f
-                                          green:68/255.0f
-                                           blue:75/255.0f
-                                          alpha:1.0f];
-        [label sizeToFit];
-        label.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        
-        [view addSubview:imageView];
-        [view addSubview:label];
-        view;
-#pragma clang diagnostic pop
-    });
+    self.avatar.layer.masksToBounds = YES;
+    self.avatar.layer.cornerRadius = 50.0;
+    self.avatar.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.avatar.layer.borderWidth = 3.0f;
+    self.avatar.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    self.avatar.layer.shouldRasterize = YES;
+    self.avatar.clipsToBounds = YES;
 }
 
 #pragma mark - UITableView Delegate
-
-- (void)tableView:(UITableView * __unused)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath * __unused)indexPath {
-    cell.backgroundColor = [UIColor clearColor];
-    cell.textLabel.textColor = [UIColor colorWithRed:62/255.0f
-                                               green:68/255.0f
-                                                blue:75/255.0f
-                                               alpha:1.0f];
-    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)sectionIndex {
-    if (sectionIndex == 0) {
-        return nil;
-    }
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 34)];
-    view.backgroundColor = [UIColor colorWithRed:167/255.0f
-                                           green:167/255.0f
-                                            blue:167/255.0f
-                                           alpha:0.6f];
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 8, 0, 0)];
-    label.text = @"Friends Online";
-    label.font = [UIFont systemFontOfSize:15];
-    label.textColor = [UIColor whiteColor];
-    label.backgroundColor = [UIColor clearColor];
-    [label sizeToFit];
-    [view addSubview:label];
-    
-    return view;
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger __unused)sectionIndex {
+    return (UIView *)[tableView dequeueReusableCellWithIdentifier:@"sectionHeader"];
 }
 
 - (CGFloat)tableView:(UITableView * __unused)tableView heightForHeaderInSection:(NSInteger)sectionIndex {
-    if (sectionIndex == 0) {
+    if (!sectionIndex) {
         return 0;
     }
 
-    return 34;
+    return 34.0f;
+}
+
+- (CGFloat)tableView:(UITableView * __unused)tableView heightForRowAtIndexPath:(NSIndexPath * __unused)indexPath {
+    return 54.0f;
 }
 
 #pragma mark - UITableView Datasource
-- (CGFloat)tableView:(UITableView * __unused)tableView heightForRowAtIndexPath:(NSIndexPath * __unused)indexPath {
-    return 54;
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView * __unused)tableView {
     return (NSInteger)self.dataSource.count;
 }
