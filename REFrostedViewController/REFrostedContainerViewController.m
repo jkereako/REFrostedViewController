@@ -147,15 +147,13 @@
                                                 self.view.bounds.size.height);
 }
 
-- (void)setBackgroundViewsAlpha:(CGFloat)alpha
-{
+- (void)setBackgroundViewsAlpha:(CGFloat)alpha {
     for (UIView *view in self.backgroundViews) {
         view.alpha = alpha;
     }
 }
 
-- (void)resizeToSize:(CGSize)size
-{
+- (void)resizeToSize:(CGSize)size {
     REFrostedViewController *strongFrostedViewController = self.frostedViewController;
     if (strongFrostedViewController.direction == REFrostedViewControllerDirectionLeft) {
         [UIView animateWithDuration:strongFrostedViewController.animationDuration animations:^{
@@ -473,8 +471,7 @@
     }
 }
 
-- (void)fixLayoutWithDuration:(NSTimeInterval __unused)duration
-{
+- (void)fixLayoutWithDuration:(NSTimeInterval __unused)duration {
     REFrostedViewController *strongFrostedViewController = self.frostedViewController;
     if (strongFrostedViewController.direction == REFrostedViewControllerDirectionLeft) {
         [self setContainerFrame:CGRectMake(0, 0, strongFrostedViewController.calculatedMenuViewSize.width, strongFrostedViewController.calculatedMenuViewSize.height)];
@@ -498,8 +495,7 @@
 }
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-implementations"
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
     [self fixLayoutWithDuration:duration];
 }
