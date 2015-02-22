@@ -72,14 +72,6 @@ Inspired by a [Dribbble shot](http://dribbble.com/shots/1173945-Menu-Concept-1),
 
 The blur algorithm that is used for static blur comes from WWDC 2013's session 208, "What's New in iOS User Interface Design".
 
-## Contact
-
-Roman Efimov
-
-- https://github.com/romaonthego
-- https://twitter.com/romaonthego
-- romefimov@gmail.com
-
 ## License
 
 REFrostedViewController is available under the MIT license.
