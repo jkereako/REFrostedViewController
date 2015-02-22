@@ -24,8 +24,6 @@
 //
 
 #import "REFrostedContainerViewController.h"
-#import "UIImage+REFrostedViewController.h"
-#import "UIView+REFrostedViewController.h"
 #import "UIViewController+REFrostedViewController.h"
 #import "REFrostedViewController.h"
 #import "RECommonFunctions.h"
