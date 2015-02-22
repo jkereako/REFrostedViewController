@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Roman Efimov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import "REFrostedViewController.h"
 
 @interface DEMOSecondViewController : UIViewController
