@@ -14,7 +14,7 @@
 		<string>https://github.com/jkereako/REFrostedViewController.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Examples/Storyboards/REFrostedViewControllerStoryboards.xcodeproj</string>
+	<string>Example/Storyboards/REFrostedViewControllerStoryboards.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>846BE617AA9E74C124CCAACA9AE4C37BCADD90D2</key>
