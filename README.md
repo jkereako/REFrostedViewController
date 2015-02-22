@@ -11,8 +11,7 @@ This is a simplified version of Romamn Efimov's REFrostedViewController.
 
 iOS 7/8 style blurred view controller that appears on top of your view controller.
 
-<img src="https://github.com/romaonthego/REFrostedViewController/raw/master/Screenshot.png" alt="REFrostedViewController Screenshot" width="400" height="568" />
-<img src="https://github.com/romaonthego/REFrostedViewController/raw/master/Demo.gif" alt="REFrostedViewController Screenshot" width="320" height="568" />
+<img src="https://raw.githubusercontent.com/jkereako/REFrostedViewController/master/new-demo.gif" alt="REFrostedViewController Screenshot" width="320" height="568" />
 
 ## Requirements
 * Xcode 6 or higher
