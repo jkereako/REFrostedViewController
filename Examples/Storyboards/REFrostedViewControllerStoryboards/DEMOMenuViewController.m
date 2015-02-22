@@ -20,9 +20,10 @@
 
 @implementation DEMOMenuViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+
+    // Set up tableview data source
                         // Section 1
     self.dataSource = @[@[@"Home", @"Profile", @"Chats"],
                         // Section 2
@@ -63,20 +64,18 @@
     });
 }
 
-#pragma mark -
-#pragma mark UITableView Delegate
+#pragma mark - UITableView Delegate
 
-- (void)tableView:(UITableView * __unused)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath * __unused)indexPath
-{
+- (void)tableView:(UITableView * __unused)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath * __unused)indexPath {
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)sectionIndex
-{
-    if (sectionIndex == 0)
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)sectionIndex {
+    if (sectionIndex == 0) {
         return nil;
+    }
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 34)];
     view.backgroundColor = [UIColor colorWithRed:167/255.0f green:167/255.0f blue:167/255.0f alpha:0.6f];
@@ -92,30 +91,26 @@
     return view;
 }
 
-- (CGFloat)tableView:(UITableView * __unused)tableView heightForHeaderInSection:(NSInteger)sectionIndex
-{
-    if (sectionIndex == 0)
+- (CGFloat)tableView:(UITableView * __unused)tableView heightForHeaderInSection:(NSInteger)sectionIndex {
+    if (sectionIndex == 0) {
         return 0;
-    
+    }
+
     return 34;
 }
 
-#pragma mark -
-#pragma mark UITableView Datasource
+#pragma mark - UITableView Datasource
 
-- (CGFloat)tableView:(UITableView * __unused)tableView heightForRowAtIndexPath:(NSIndexPath * __unused)indexPath
-{
+- (CGFloat)tableView:(UITableView * __unused)tableView heightForRowAtIndexPath:(NSIndexPath * __unused)indexPath {
     return 54;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView * __unused)tableView
-{
-    return 2;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * __unused)tableView {
+    return (NSInteger)self.dataSource.count;
 }
 
-- (NSInteger)tableView:(UITableView * __unused)tableView numberOfRowsInSection:(NSInteger __unused)sectionIndex
-{
-    return 3;
+- (NSInteger)tableView:(UITableView * __unused)tableView numberOfRowsInSection:(NSInteger __unused)sectionIndex {
+    return (NSInteger)((NSArray *)self.dataSource[(NSUInteger)sectionIndex]).count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

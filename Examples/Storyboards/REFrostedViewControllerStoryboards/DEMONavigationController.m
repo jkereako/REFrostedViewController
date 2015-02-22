@@ -14,25 +14,21 @@
 
 @implementation DEMONavigationController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
+
+    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self
+                                                                            action:@selector(panGestureRecognized:)]];
 }
 
-#pragma mark -
-#pragma mark Gesture recognizer
-
-- (void)panGestureRecognized:(UIPanGestureRecognizer *)sender
-{
-    // Dismiss keyboard (optional)
-    //
+#pragma mark - Gesture recognizer
+- (void)panGestureRecognized:(UIPanGestureRecognizer * __unused)sender {
+    // Dismiss keyboard
     [self.view endEditing:YES];
     [self.frostedViewController.view endEditing:YES];
-    
+
     // Present the view controller
-    //
-    [self.frostedViewController panGestureRecognized:sender];
+    [self.frostedViewController presentMenuViewController];
 }
 
 @end
