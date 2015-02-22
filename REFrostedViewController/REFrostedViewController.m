@@ -45,6 +45,7 @@
     if (self) {
         [self commonInit];
     }
+
     return self;
 }
 
@@ -53,6 +54,7 @@
     if (self) {
         [self commonInit];
     }
+
     return self;
 }
 
@@ -68,16 +70,19 @@
     _containerViewController.frostedViewController = self;
     _menuViewSize = CGSizeZero;
     _liveBlur = REUIKitIsFlatMode();
-    _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:_containerViewController action:@selector(panGestureRecognized:)];
+    _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:_containerViewController
+                                                                    action:@selector(panGestureRecognized:)];
     _automaticSize = YES;
 }
 
 - (instancetype)initWithContentViewController:(UIViewController *)contentViewController menuViewController:(UIViewController *)menuViewController {
     self = [self init];
+
     if (self) {
         _contentViewController = contentViewController;
         _menuViewController = menuViewController;
     }
+
     return self;
 }
 
@@ -94,8 +99,7 @@
     return self.contentViewController;
 }
 
-#pragma mark -
-#pragma mark Setters
+#pragma mark - Setters
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wselector"
@@ -150,7 +154,6 @@
 }
 
 #pragma mark -
-
 - (void)presentMenuViewController {
     [self presentMenuViewControllerWithAnimatedApperance:YES];
 }
@@ -175,7 +178,9 @@
                                                  _menuViewSize.height > 0 ? _menuViewSize.height : self.contentViewController.view.frame.size.height);
     }
 
-    [self re_displayController:self.containerViewController frame:self.contentViewController.view.frame];
+    [self re_displayController:self.containerViewController
+                         frame:self.contentViewController.view.frame];
+
     self.visible = YES;
 }
 
@@ -183,6 +188,7 @@
     if (!self.isVisible) {//when call hide menu before menuViewController added to containerViewController, the menuViewController will never added to containerViewController
         return;
     }
+
     [self.containerViewController hideWithCompletionHandler:completionHandler];
 }
 
@@ -196,11 +202,13 @@
 
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer {
     id<REFrostedViewControllerDelegate> strongDelegate = self.delegate;
+
     if ([strongDelegate conformsToProtocol:@protocol(REFrostedViewControllerDelegate)] && [strongDelegate respondsToSelector:@selector(frostedViewController:didRecognizePanGesture:)])
         [strongDelegate frostedViewController:self didRecognizePanGesture:recognizer];
 
-    if (!self.panGestureEnabled)
+    if (!self.panGestureEnabled) {
         return;
+    }
 
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         [self presentMenuViewControllerWithAnimatedApperance:NO];
@@ -209,8 +217,7 @@
     [self.containerViewController panGestureRecognized:recognizer];
 }
 
-#pragma mark -
-#pragma mark Rotation handler
+#pragma mark - Rotation handler
 - (BOOL)shouldAutorotate {
     return self.contentViewController.shouldAutorotate;
 }
@@ -220,6 +227,7 @@
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
     id<REFrostedViewControllerDelegate> strongDelegate = self.delegate;
+
     if ([strongDelegate conformsToProtocol:@protocol(REFrostedViewControllerDelegate)] && [strongDelegate respondsToSelector:@selector(frostedViewController:willAnimateRotationToInterfaceOrientation:duration:)])
         [strongDelegate frostedViewController:self willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
