@@ -1,13 +1,14 @@
 # REFrostedViewController
 
-This is a simplified version of Romamn Efimov's REFrostedViewController.
+This is a simplified version of Romamn Efimov's REFrostedViewController. It is a great example of how to handle menu items in iOS.
 
-## Changes
+## Changes from original project
 
 - Deleted the categories `UIImage+REFrostedViewController` and `UIView+REFrostedViewController`
 - Changed the coding style to match the [NYT Objective-C style guide](https://github.com/NYTimes/objective-c-style-guide)
 - Replaced logic in `tableView:didSelectRowAtIndexPath:` with a custom segue. This does require some configuration to work properly, but in my opnion, it is easier to understand.
 - Compiled in hard-mode
+- Moved most of the view configurations to the Storyboard.
 
 iOS 7/8 style blurred view controller that appears on top of your view controller.
 
@@ -27,49 +28,7 @@ Build and run the `REFrostedViewControllerExample` project in Xcode to see `REFr
 
 All you need to do is drop `REFrostedViewController` files into your project, and add `#include "REFrostedViewController.h"` to the top of classes that will use it.
 
-Your project must be linked against the `Accelerate` framework.
-
-## Example Usage
-
-In your AppDelegate's `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions` create the view controller and assign content and menu view controllers.
-
-``` objective-c
-// Create content and menu controllers
-//
-DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:[[DEMOHomeViewController alloc] init]];
-DEMOMenuViewController *menuController = [[DEMOMenuViewController alloc] initWithStyle:UITableViewStylePlain];
-
-// Create frosted view controller
-//
-REFrostedViewController *frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:navigationController menuViewController:menuController];
-frostedViewController.direction = REFrostedViewControllerDirectionLeft;
-
-// Make it a root controller
-//
-self.window.rootViewController = frostedViewController;
-```
-
-You can present it manually:
-
-```objective-c
-[self.frostedViewController presentMenuViewController];
-```
-
-or using a pan gesture recognizer:
-
-```objective-c
-- (void)panGestureRecognized:(UIPanGestureRecognizer *)sender
-{
-    [self.frostedViewController panGestureRecognized:sender];
-}
-```
-
-### Live Blur
-
-By default, live blurring is enabled under iOS 7. The live blurring is performed by using a `UIToolbar` as a background view, that means when you change its tint color, it becomes desaturated. That's the way it works on iOS 7. iPhone 4 doesn't support live blur and falls back to a transparent view. This also applies to when a user device has high contrast accessibility setting set to on.
-To disable live blurring, set `liveBlur` property to `NO`.
-
-## Storyboards Example
+## Storyboard Example
 
 1. Create a subclass of `REFrostedViewController`. In this example we call it `DEMORootViewController`.
 2. In the Storyboard designate the root view's owner as `DEMORootViewController`.
@@ -79,8 +38,9 @@ To disable live blurring, set `liveBlur` property to `NO`.
 
 ```objective-c
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
     self.contentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
     self.menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
 }
