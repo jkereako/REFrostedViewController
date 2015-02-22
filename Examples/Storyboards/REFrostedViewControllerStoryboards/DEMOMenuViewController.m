@@ -14,6 +14,8 @@
 
 @interface DEMOMenuViewController ()
 
+@property (nonatomic, readwrite) NSArray *dataSource;
+
 @end
 
 @implementation DEMOMenuViewController
@@ -21,7 +23,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+                        // Section 1
+    self.dataSource = @[@[@"Home", @"Profile", @"Chats"],
+                        // Section 2
+                        @[@"John Appleseed", @"John Doe", @"Test User"]];
+
     self.tableView.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -94,23 +100,6 @@
     return 34;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    DEMONavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
-    
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        DEMOHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"homeController"];
-        navigationController.viewControllers = @[homeViewController];
-    } else {
-        DEMOSecondViewController *secondViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"secondController"];
-        navigationController.viewControllers = @[secondViewController];
-    }
-    
-    self.frostedViewController.contentViewController = navigationController;
-    [self.frostedViewController hideMenuViewController];
-}
-
 #pragma mark -
 #pragma mark UITableView Datasource
 
@@ -129,25 +118,33 @@
     return 3;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell;
+    NSString *title;
+
+    title = self.dataSource[(NSUInteger)indexPath.section][(NSUInteger)indexPath.row];
+
+    if ([title isEqualToString:@"Home"]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"home"];
     }
-    
-    if (indexPath.section == 0) {
-        NSArray *titles = @[@"Home", @"Profile", @"Chats"];
-        cell.textLabel.text = titles[(NSUInteger)indexPath.row];
-    } else {
-        NSArray *titles = @[@"John Appleseed", @"John Doe", @"Test User"];
-        cell.textLabel.text = titles[(NSUInteger)indexPath.row];
+    else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"second"];
     }
+
+    cell.textLabel.text = title;
     
     return cell;
 }
- 
+#pragma mark - Navigation
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString * __unused)identifier sender:(__unused id)sender {
+    return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue * __unused)segue sender:(id __unused)sender {
+    // Boilerplate garbage
+    DEMONavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
+
+    self.frostedViewController.contentViewController = navigationController;
+}
+
 @end
