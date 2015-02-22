@@ -27,6 +27,8 @@
     self.tableView.dataSource = self;
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor clearColor];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
     self.tableView.tableHeaderView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 184.0f)];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];
@@ -51,13 +53,14 @@
         [view addSubview:imageView];
         [view addSubview:label];
         view;
+#pragma clang diagnostic pop
     });
 }
 
 #pragma mark -
 #pragma mark UITableView Delegate
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView * __unused)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath * __unused)indexPath
 {
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
@@ -83,7 +86,7 @@
     return view;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)sectionIndex
+- (CGFloat)tableView:(UITableView * __unused)tableView heightForHeaderInSection:(NSInteger)sectionIndex
 {
     if (sectionIndex == 0)
         return 0;
@@ -111,17 +114,17 @@
 #pragma mark -
 #pragma mark UITableView Datasource
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView * __unused)tableView heightForRowAtIndexPath:(NSIndexPath * __unused)indexPath
 {
     return 54;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView * __unused)tableView
 {
     return 2;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
+- (NSInteger)tableView:(UITableView * __unused)tableView numberOfRowsInSection:(NSInteger __unused)sectionIndex
 {
     return 3;
 }
@@ -138,10 +141,10 @@
     
     if (indexPath.section == 0) {
         NSArray *titles = @[@"Home", @"Profile", @"Chats"];
-        cell.textLabel.text = titles[indexPath.row];
+        cell.textLabel.text = titles[(NSUInteger)indexPath.row];
     } else {
         NSArray *titles = @[@"John Appleseed", @"John Doe", @"Test User"];
-        cell.textLabel.text = titles[indexPath.row];
+        cell.textLabel.text = titles[(NSUInteger)indexPath.row];
     }
     
     return cell;
