@@ -11,6 +11,4 @@
 
 @interface DEMOSecondViewController : UIViewController
 
-- (IBAction)showMenu;
-
 @end

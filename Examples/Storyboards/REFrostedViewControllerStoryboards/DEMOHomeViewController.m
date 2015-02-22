@@ -10,19 +10,18 @@
 
 @interface DEMOHomeViewController ()
 
+- (IBAction)showMenuAction:(UIBarButtonItem *)sender;
+
 @end
 
 @implementation DEMOHomeViewController
 
-- (IBAction)showMenu
-{
-    // Dismiss keyboard (optional)
-    //
+- (IBAction)showMenuAction:(UIBarButtonItem * __unused)sender {
+    // Dismiss keyboard
     [self.view endEditing:YES];
     [self.frostedViewController.view endEditing:YES];
-    
+
     // Present the view controller
-    //
     [self.frostedViewController presentMenuViewController];
 }
 

@@ -54,10 +54,11 @@
                     <navigationItem key="navigationItem" title="Home Controller" id="HIf-bS-REK">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="SZg-Pf-I50">
                             <connections>
-                                <action selector="showMenu" destination="jsP-Dz-DYG" id="Fp7-R0-lXj"/>
+                                <action selector="showMenuAction:" destination="jsP-Dz-DYG" id="dHC-eD-bOw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Awc-v8-Z61" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,10 +134,11 @@
                     <navigationItem key="navigationItem" title="Second Controller" id="8VR-6H-mGr">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="3gh-ed-0Ek">
                             <connections>
-                                <action selector="showMenu" destination="yGP-ij-jME" id="ZoY-gJ-XvS"/>
+                                <action selector="showMenuAction:" destination="yGP-ij-jME" id="ZXd-Zw-TRt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBM-yN-hYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

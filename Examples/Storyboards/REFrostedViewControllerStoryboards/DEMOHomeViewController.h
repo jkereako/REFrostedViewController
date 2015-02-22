@@ -11,6 +11,4 @@
 
 @interface DEMOHomeViewController : UIViewController
 
-- (IBAction)showMenu;
-
 @end
