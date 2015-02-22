@@ -274,7 +274,7 @@
         if ([strongDelegate conformsToProtocol:@protocol(REFrostedViewControllerDelegate)] && [strongDelegate respondsToSelector:@selector(frostedViewController:didHideMenuViewController:)]) {
             [strongDelegate frostedViewController:strongFrostedViewController didHideMenuViewController:strongFrostedViewController.menuViewController];
         }
-        
+
         if (completionHandler) {
             completionHandler();
         }
