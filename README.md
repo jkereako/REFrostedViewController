@@ -1,6 +1,8 @@
 # REFrostedViewController
 
-This is a simplified version of Romamn Efimov's REFrostedViewController. It is a great example of how to handle menu items in iOS.
+This is a simplified version of Romamn Efimov's REFrostedViewController.
+
+This project is a great example of how to handle menu items in iOS.
 
 ## Changes from original project
 
@@ -15,10 +17,9 @@ iOS 7/8 style blurred view controller that appears on top of your view controlle
 <img src="https://raw.githubusercontent.com/jkereako/REFrostedViewController/master/new-demo.gif" alt="REFrostedViewController Screenshot" width="320" height="568" />
 
 ## Requirements
+
 * Xcode 6 or higher
-* Apple LLVM compiler
-* iOS 6.0 or higher
-* ARC
+* iOS 8.0 or higher
 
 ## Demo
 
