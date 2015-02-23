@@ -1,8 +1,8 @@
 # REFrostedViewController
 
-This is a simplified version of Romamn Efimov's REFrostedViewController.
+This is a simplified version of Roman Efimov's [REFrostedViewController](https://github.com/romaonthego/REFrostedViewController).
 
-This project is a great example of how to handle menu items in iOS.
+This project is a great example of how to handle menu items in iOS. I've used it in several of my apps.
 
 ## Changes from original project
 
