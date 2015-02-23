@@ -1,15 +1,15 @@
 # REFrostedViewController
 
-This is a simplified version of Romamn Efimov's REFrostedViewController.
+This is a simplified version of Roman Efimov's [REFrostedViewController](https://github.com/romaonthego/REFrostedViewController).
 
-This project is a great example of how to handle menu items in iOS.
+This project is a great example of how to handle menu items in iOS. I've used it in several of my apps.
 
 ## Changes from original project
 
 - Deleted the categories `UIImage+REFrostedViewController` and `UIView+REFrostedViewController`
+- Added the custom segue `REMenuItemSelectionSegue`
 - Changed the coding style to match the [NYT Objective-C style guide](https://github.com/NYTimes/objective-c-style-guide)
-- Replaced logic in `tableView:didSelectRowAtIndexPath:` with a custom segue. This does require some configuration to work properly, but in my opnion, it is easier to understand.
-- Compiled in hard-mode
+- Targeted iOS 8.1 and put XCode in hard-mode
 - Moved most of the view configurations to the Storyboard.
 
 iOS 7/8 style blurred view controller that appears on top of your view controller.
