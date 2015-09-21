@@ -1,3 +1,11 @@
+# WARNING
+
+This project is broken is XCode 7... and it's not worth fixing.
+
+Originally, the idea of a hamburger menu in iOS impressed me, but, after using REFrostedViewController in a project, I realized it's too hard to maintain. My Storyboard and my code is nearly impossible to follow. And now that the project is broken in the latest version of XCode, it is proof that this project is not sustainable.
+
+**tldr; don't use this project, use a simple table view for a menu.**
+
 # REFrostedViewController
 
 This is a simplified version of Roman Efimov's [REFrostedViewController](https://github.com/romaonthego/REFrostedViewController).
@@ -18,7 +26,7 @@ iOS 7/8 style blurred view controller that appears on top of your view controlle
 
 ## Requirements
 
-* Xcode 6 or higher
+* Xcode 6.x
 * iOS 8.0 or higher
 
 ## Demo
