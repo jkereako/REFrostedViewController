@@ -1,10 +1,10 @@
 # WARNING
 
-This project is broken is XCode 7... and it's not worth fixing.
+This project is broken is XCode 7. However, [the original project does work in XCode 7](https://github.com/romaonthego/REFrostedViewController).
 
-Originally, the idea of a hamburger menu in iOS impressed me, but, after using REFrostedViewController in a project, I realized it's too hard to maintain. My Storyboard and my code is nearly impossible to follow. And now that the project is broken in the latest version of XCode, it is proof that this project is not sustainable.
+I decided not to fix it because using this project makes apps difficult to maintain. The storyboards are hard to follow.
 
-**tldr; don't use this project, use a simple table view for a menu.**
+**Don't use this project, use the original instead.**
 
 # REFrostedViewController
 
